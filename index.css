@@ -1,0 +1,1492 @@
+
+/* ================================================= */
+/*                 GLOBAL SETTINGS                   */
+/* ================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ================================================= */
+/*                    HEADER                         */
+/* ================================================= */
+
+.header {
+    background-color: antiquewhite;
+    padding: 20px;
+    text-align: center;
+    color: brown;
+}
+
+
+/* ================================================= */
+/*                 NAVIGATION BAR                    */
+/* ================================================= */
+
+.topnav {
+    width: 100%;
+    overflow: hidden;
+    background-color: antiquewhite;
+
+    position: sticky;
+    top: 0;
+    z-index: 99999;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: brown;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.topnav a:hover {
+    background-color: cornsilk;
+    color: brown;
+}
+
+.topnav a.active {
+    background-color: cornsilk;
+    color: brown;
+}
+
+
+/* ================================================= */
+/*                 PAGE NAVIGATION                   */
+/* ================================================= */
+
+.page {
+    display: none;
+    width: 100%;
+    min-height: calc(100vh - 110px);
+}
+
+.page.active {
+    display: block;
+}
+
+
+/* ================================================= */
+/*                  TABLE & LIST                     */
+/* ================================================= */
+
+.other-page {
+    padding: 30px;
+    background: #fffaf0;
+    color: brown;
+    min-height: 100vh;
+}
+
+.other-page h1 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+
+/* ================================================= */
+/*                  BIODATA PAGE                     */
+/* ================================================= */
+
+.biodata-page {
+    min-height: 100vh;
+    padding: 10px 0 30px;
+
+    background-image: url("BG PINK.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    overflow: hidden;
+}
+
+
+/* ================================================= */
+/*                 PINK SCROLLER                     */
+/* ================================================= */
+
+.pink-scroller {
+    width: 100%;
+    overflow: hidden;
+    margin: 10px auto;
+
+    background: rgba(255, 193, 234, 0.4);
+    border: 3px solid rgb(134, 0, 56);
+    border-radius: 15px;
+
+    padding: 10px 0;
+}
+
+.pink-scroller-track {
+    display: flex;
+    width: max-content;
+    animation: pinkScroll 30s linear infinite;
+}
+
+.pink-scroller-inner {
+    flex-shrink: 0;
+    white-space: nowrap;
+
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(107, 26, 51);
+
+    padding-right: 60px;
+}
+
+@keyframes pinkScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* ================================================= */
+/*                 BIODATA TITLE                     */
+/* ================================================= */
+
+.biodata-box {
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgb(255, 169, 212);
+    border: 3px solid rgb(114, 8, 57);
+    border-radius: 12px;
+}
+
+.biodata-box h1 {
+    color: rgb(150, 26, 65);
+    font-size: 30px;
+    text-align: center;
+
+    font-family:
+        'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+}
+
+
+/* ================================================= */
+/*                  BIODATA CARD                     */
+/* ================================================= */
+
+.biodata-card {
+    width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    background-color: rgb(255, 179, 242);
+    background-image: url("BG BIO.jpeg");
+
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 12px;
+    border: 3px solid rgb(114, 8, 57);
+}
+
+.profile-photo img {
+    width: 260px;
+    height: 260px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+    border: 3px solid rgb(114, 8, 57);
+}
+
+.biodata-text {
+    color: rgb(114, 8, 57);
+
+    font-family:
+        'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+
+    font-size: 30px;
+}
+
+.biodata-text h1 {
+    margin-bottom: 24px;
+
+    font-size: 40px;
+    color: rgb(114, 8, 57);
+    text-decoration: underline;
+}
+
+.biodata-text p {
+    margin: 5px 0;
+}
+
+
+/* ================================================= */
+/*                  PINK MARQUEE                     */
+/* ================================================= */
+
+.pink-marquee {
+    width: 100%;
+    overflow: hidden;
+
+    background-color: rgba(255, 193, 234, 0.4);
+
+    padding: 10px 0;
+
+    border-radius: 15px;
+    border: 3px solid #b83272;
+}
+
+.pink-marquee-track {
+    display: flex;
+    width: max-content;
+
+    animation: pinkMarquee 30s linear infinite;
+}
+
+.pink-marquee-content {
+    flex-shrink: 0;
+    white-space: nowrap;
+
+    color: rgb(114, 8, 57);
+
+    font-family:
+        'Franklin Gothic Medium',
+        'Arial Narrow',
+        Arial,
+        sans-serif;
+
+    font-size: 30px;
+
+    padding-right: 60px;
+}
+
+@keyframes pinkMarquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* ================================================= */
+/*                 FOOD CAROUSEL                     */
+/* ================================================= */
+
+.food-carousel {
+    width: 100%;
+    overflow: hidden;
+
+    margin: 30px auto;
+    text-align: center;
+}
+
+.food-track {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    transition: transform 0.5s ease;
+}
+
+.food-card {
+    flex: 0 0 350px;
+    height: 500px;
+
+    background: rgba(255, 179, 242, 0.7);
+
+    border: 3px solid rgb(114, 8, 57);
+    border-radius: 18px;
+
+    padding: 15px;
+
+    transition: transform 0.5s ease;
+}
+
+.food-card img {
+    width: 100%;
+    height: 410px;
+
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.food-card p {
+    margin: 10px 0 0;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    color: rgb(107, 26, 51);
+}
+
+.food-buttons {
+    margin-top: 25px;
+}
+
+.food-buttons button {
+    padding: 7px 14px;
+    margin: 0 4px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: rgb(114, 8, 57);
+    color: white;
+
+    cursor: pointer;
+}
+
+.food-buttons button:hover {
+    background: rgb(160, 30, 90);
+}
+
+
+/* ================================================= */
+/*                  MOVIE CONTAINER                  */
+/* ================================================= */
+
+.movie-container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+
+    overflow: visible;
+
+    margin-top: 25px;
+    padding: 20px 30px 50px;
+
+    perspective: 1200px;
+}
+
+
+/* ================================================= */
+/*                    MOVIE CARD                     */
+/* ================================================= */
+
+.movie-card {
+    position: relative;
+
+    width: 320px;
+    height: 480px;
+
+    flex: 0 0 320px;
+
+    cursor: pointer;
+
+    transform-style: preserve-3d;
+
+    transition: transform 0.5s ease;
+
+    z-index: 1;
+}
+
+.movie-card:hover {
+    transform:
+        rotateX(6deg)
+        rotateY(-8deg)
+        translateY(-18px)
+        translateZ(20px)
+        scale(1.03);
+
+    z-index: 1000;
+}
+
+
+/* ================================================= */
+/*                  MOVIE WRAPPER                    */
+/* ================================================= */
+
+.movie-wrapper {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: #151b22;
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.4);
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+
+    z-index: 2;
+}
+
+.movie-card:hover .movie-wrapper {
+    transform: translateZ(30px);
+
+    box-shadow:
+        0 25px 40px rgba(0, 0, 0, 0.55);
+}
+
+.movie-wrapper img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.movie-card:hover .movie-wrapper img {
+    transform: scale(1.08);
+    filter: brightness(0.75);
+}
+
+
+/* ================================================= */
+/*                  MOVIE GRADIENT                   */
+/* ================================================= */
+
+.movie-wrapper::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 40%,
+            rgba(0, 0, 0, 0.85)
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.4s ease;
+
+    pointer-events: none;
+}
+
+.movie-card:hover .movie-wrapper::after {
+    opacity: 1;
+}
+
+
+/* ================================================= */
+/*                   MOVIE TITLE                     */
+/* ================================================= */
+
+.movie-title {
+    position: absolute;
+
+    left: 10px;
+    right: 10px;
+    bottom: 15px;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform:
+        translateZ(60px)
+        translateY(15px);
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.4s ease;
+
+    z-index: 5;
+}
+
+.movie-card:hover .movie-title {
+    opacity: 1;
+
+    transform:
+        translateZ(65px)
+        translateY(0);
+}
+
+
+/* ================================================= */
+/*                   MOVIE SHADOW                    */
+/* ================================================= */
+
+.movie-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 70%;
+    height: 15px;
+
+    left: 15%;
+    bottom: -20px;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    border-radius: 50%;
+    filter: blur(10px);
+
+    transition: transform 0.5s ease;
+
+    z-index: 0;
+}
+
+.movie-card:hover::after {
+    transform: scale(1.2);
+}
+
+
+/* ================================================= */
+/*                 CHARACTER POP-UP                  */
+/* ================================================= */
+
+.character-pop {
+    position: absolute;
+
+    width: 250px;
+    height: auto;
+
+    left: 50%;
+    bottom: -20px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 9999;
+
+    transform:
+        translate3d(-50%, 80px, 200px)
+        scale(0.8);
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+.movie-card:hover .character-pop {
+    opacity: 1;
+
+    transform:
+        translate3d(-25%, -40px, 120px)
+        scale(1.05);
+}
+
+
+/* LEGALLY BLONDE */
+
+.movie-card:nth-child(2):hover .character-pop {
+    transform:
+        translate3d(-35%, -150px, 100px)
+        scale(1.8);
+}
+
+/* WICKED */
+
+.movie-card:nth-child(4):hover .character-pop {
+    transform:
+        translate3d(-52%, -100px, 50px)
+        scale(1.2);
+}
+
+/* MEAN GIRLS */
+
+.movie-card:nth-child(3):hover .character-pop {
+    transform:
+        translate3d(-49%, -100px, 50px)
+        scale(1.3);
+}
+
+/* GRAND BUDAPEST HOTEL */
+
+.movie-card:nth-child(5):hover .character-pop {
+    transform:
+        translate3d(-60%, -120px, 50px)
+        scale(1.5);
+}
+
+
+/* ================================================= */
+/*                   DISNEY PAGE                     */
+/* ================================================= */
+
+.sts-page {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #102b4e;
+
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* ================================================= */
+/*                 DISNEY SCROLLER                   */
+/* ================================================= */
+
+.disney-scroller {
+    width: 100%;
+
+    padding: 12px 0;
+
+    background: #102b4e;
+
+    overflow: hidden;
+
+    position: relative;
+    z-index: 20;
+}
+
+.disney-scroller-track {
+    display: flex;
+    width: max-content;
+
+    animation: disneyScroll 30s linear infinite;
+}
+
+.disney-scroller-inner {
+    flex-shrink: 0;
+
+    white-space: nowrap;
+
+    color: #053169;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    background: rgba(255, 242, 205, 0.94);
+
+    border: 3px solid #f4d98d;
+    border-radius: 16px;
+
+    padding: 12px 30px;
+
+    margin-right: 20px;
+
+    box-shadow:
+        0 0 0 2px #102b4e,
+        0 0 0 5px #f4d98d;
+}
+
+@keyframes disneyScroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* ================================================= */
+/*                   DISNEY HOME                     */
+/* ================================================= */
+
+.disney-home {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: #000;
+}
+
+
+/* ================================================= */
+/*                 DISNEY SLIDER                     */
+/* ================================================= */
+
+.disney-slider {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+}
+
+.disney-slide {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+
+    transition: opacity 1s ease;
+}
+
+.disney-slide.active {
+    opacity: 1;
+}
+
+.disney-slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 35%;
+
+    animation: disneyZoom 7s linear;
+}
+
+@keyframes disneyZoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
+}
+
+
+/* ================================================= */
+/*                  DISNEY OVERLAY                   */
+/* ================================================= */
+
+.disney-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.45) 0%,
+            rgba(0, 0, 0, 0.25) 35%,
+            rgba(0, 0, 0, 0.08) 65%,
+            rgba(0, 0, 0, 0) 100%
+        );
+}
+
+
+/* ================================================= */
+/*                  DISNEY SPARKLES                  */
+/* ================================================= */
+
+.disney-sparkles {
+    position: absolute;
+    inset: 0;
+
+    z-index: 4;
+
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.disney-sparkles .sparkle {
+    position: absolute;
+
+    color: #fff1b8;
+
+    text-shadow:
+        0 0 5px rgba(255, 241, 184, 0.8),
+        0 0 10px rgba(255, 241, 184, 0.5);
+
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.15;
+        transform: scale(0.6);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+
+/* ================================================= */
+/*                  DISNEY CONTENT                   */
+/* ================================================= */
+
+.disney-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 70%;
+
+    margin-left: 8%;
+    margin-top: 40px;
+
+    color: white;
+}
+
+.disney-content h1 {
+    font-size: 5em;
+
+    font-weight: 900;
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+    line-height: 0.95;
+
+    margin-bottom: 35px;
+
+    color: white;
+
+    text-shadow:
+        3px 3px 8px rgba(0, 0, 0, 0.6);
+
+    transition:
+        color 0.4s ease,
+        font-size 0.4s ease;
+}
+
+.disney-content h1 span {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.disney-content h1:hover {
+    color: #f4d98d;
+    font-size: 5.5em;
+}
+
+.disney-content p {
+    max-width: 750px;
+
+    margin-bottom: 35px;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    text-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+
+/* ================================================= */
+/*                 DISNEY READ MORE                  */
+/* ================================================= */
+
+.disney-read-more {
+    display: inline-block;
+
+    padding: 15px 35px;
+
+    background: #ffffff;
+    color: #2696e9;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    border-radius: 3px;
+    border: 2px solid transparent;
+
+    transition: all 0.3s ease;
+}
+
+.disney-read-more:hover {
+    background: #fff3cf;
+    color: #2696e9;
+
+    border-color: #f4d98d;
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 0 12px rgba(255, 241, 184, 0.7);
+}
+
+
+/* ================================================= */
+/*                 DISNEY SOCIAL MEDIA               */
+/* ================================================= */
+
+.disney-media-icons {
+    position: absolute;
+
+    right: 35px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.disney-media-icons a {
+    color: white;
+
+    font-size: 1.5em;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+
+    text-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.disney-media-icons a:not(:last-child) {
+    margin-bottom: 22px;
+}
+
+.disney-media-icons a:hover {
+    transform: scale(1.3);
+    color: #fff1b8;
+}
+
+
+/* ================================================= */
+/*                DISNEY NAVIGATION                  */
+/* ================================================= */
+
+.disney-navigation {
+    position: absolute;
+
+    right: 100px;
+    bottom: 25px;
+
+    z-index: 10;
+
+    display: flex;
+    gap: 12px;
+}
+
+.disney-nav-btn {
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+
+    background: transparent;
+    color: white;
+
+    cursor: pointer;
+    font-size: 12px;
+
+    transition: all 0.3s ease;
+}
+
+.disney-nav-btn:hover {
+    background: #fff3cf;
+    color: #102b4e;
+
+    border-color: #fff3cf;
+
+    transform: translateY(-3px);
+}
+
+.disney-nav-btn.active {
+    background: white;
+    color: #2696e9;
+
+    border-color: white;
+}
+
+
+/* ================================================= */
+/*               DISNEY SCROLL INDICATOR             */
+/* ================================================= */
+
+.disney-scroll-down {
+    position: absolute;
+
+    left: 8%;
+    bottom: 30px;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: white;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    opacity: 0.8;
+
+    text-shadow:
+        2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.disney-scroll-down span {
+    width: 40px;
+    height: 1px;
+
+    background: white;
+}
+
+
+/* ================================================= */
+/*                    RESPONSIVE                     */
+/* ================================================= */
+
+@media (max-width: 900px) {
+
+    .biodata-card {
+        flex-wrap: wrap;
+    }
+
+    .biodata-text {
+        font-size: 22px;
+    }
+
+    .biodata-text h1 {
+        font-size: 30px;
+    }
+
+    .movie-container {
+        justify-content: flex-start;
+        overflow-x: auto;
+    }
+
+    .disney-content {
+        width: 80%;
+        margin-left: 7%;
+    }
+
+    .disney-content h1 {
+        font-size: 3.5em;
+    }
+
+    .disney-content h1:hover {
+        font-size: 3.9em;
+    }
+
+    .disney-navigation {
+        right: 70px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .topnav a {
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    .pink-scroller-inner {
+        font-size: 18px;
+    }
+
+    .biodata-box h1 {
+        font-size: 20px;
+    }
+
+    .biodata-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-photo img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .biodata-text {
+        font-size: 18px;
+    }
+
+    .biodata-text h1 {
+        font-size: 24px;
+    }
+
+    .pink-marquee-content {
+        font-size: 20px;
+    }
+
+    .food-card {
+        flex-basis: 280px;
+        height: 400px;
+    }
+
+    .food-card img {
+        height: 310px;
+    }
+
+    .movie-card {
+        width: 260px;
+        height: 390px;
+        flex-basis: 260px;
+    }
+
+    .character-pop {
+        width: 200px;
+    }
+
+    .disney-scroller-inner {
+        font-size: 18px;
+    }
+
+    .disney-content {
+        width: 80%;
+        margin-left: 6%;
+    }
+
+    .disney-content h1 {
+        font-size: 2.8em;
+    }
+
+    .disney-content h1:hover {
+        font-size: 3.1em;
+    }
+
+    .disney-content p {
+        font-size: 12px;
+    }
+
+    .disney-media-icons {
+        right: 15px;
+    }
+
+    .disney-navigation {
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .disney-nav-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .disney-scroll-down {
+        display: none;
+    }
+
+}
+
+/* ================================================= */
+/*                  TABLE & LIST                     */
+/* ================================================= */
+.other-page {
+    padding: 30px;
+    background-color: transparent;
+    color: brown;
+    min-height: 100vh;
+}
+
+#table {
+    background-image: url("BG PINK.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h2, h3 {
+    text-align: center;
+    color: rgb(110, 0, 79);
+}
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: 90%;
+    height: 268px;
+    table-layout: fixed;
+    background-color: rgb(212, 108, 140);
+    border: 4px solid rgb(110, 0, 79);
+    text-align: center;
+    font-weight: bold;
+    color: rgb(110, 0, 79);
+}
+
+th {
+    border: 3px solid rgb(110, 0, 79);
+    padding: 14px;
+    background-color: rgb(170, 69, 99);
+    color: #ffe0eb;
+}
+
+td {
+    border: 3px solid rgb(110, 0, 79);
+    text-align: center;
+    vertical-align: middle;
+    color: rgb(110, 0, 79);
+    font-family: "Times New Roman", serif;
+    font-size: 20px;
+    padding: 0;
+}
+
+/* Warna baris tabel */
+tr:nth-child(3),
+tr:nth-child(5),
+tr:nth-child(7) {
+    background-color: rgb(251, 179, 187);
+}
+
+tr:nth-child(4),
+tr:nth-child(6) {
+    background-color: rgb(212, 108, 140);
+    color: white;
+}
+
+/* Warna sel tertentu pada tabel kedua */
+tr:nth-child(6) td:nth-child(-n+2),
+tr:nth-child(6) td:nth-child(n+3) {
+    background-color: rgb(251, 179, 187);
+}
+
+/* Efek saat kursor diarahkan ke sel */
+td:hover {
+    background-color: #ffe0eb !important;
+    color: rgb(110, 0, 79);
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+/* Jarak antara tabel pertama dan tabel berikutnya */
+table + table {
+    margin-top: 30px;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    background-image: url("STS-92-27-Reta/Bg_1.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/* CONTAINER LUAR DAFTAR BUAH */
+.box-buah {
+    width: 90%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid #0050a5a4;
+    background-color: #0f0064;
+}
+
+/* LIST BUAH */
+.box-buah ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: buah-counter;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* SETIAP BARIS BUAH */
+.box-buah ol li {
+    counter-increment: buah-counter;
+    width: 100%;
+    min-height: 45px;
+    padding: 12px 15px;
+    box-sizing: border-box;
+
+    border: 1px solid #002b866b;
+    background-color: #7395d4c2;
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* NOMOR ROMAWI */
+.box-buah ol li::before {
+    content: counter(buah-counter, upper-roman) ". ";
+}
+
+/* HOVER */
+.box-buah ol li:hover {
+    background-color: #3399ff;
+}
+
+/* ACTIVE */
+.box-buah ol li:active {
+    background-color: #004080;
+}
+
+/* CONTAINER LUAR LOREM IPSUM */
+.box-lorem {
+    width: 90%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid #001d3b;
+    background-color: #012779;
+}
+
+/* LIST LOREM IPSUM */
+.box-lorem ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* SETIAP BARIS */
+.box-lorem ul li {
+    width: 100%;
+    min-height: 45px;
+    padding: 12px 15px;
+    box-sizing: border-box;
+
+    border: 1px solid #003d7e;
+    background-color: #1f5e9e;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* BULLET */
+.box-lorem ul li::before {
+    content: "• ";
+}
+
+/* HOVER */
+.box-lorem ul li:hover {
+    background-color: #3399ff;
+}
+
+/* ACTIVE */
+.box-lorem ul li:active {
+    background-color: #6595c5;
+}
+
+/* CONTAINER LUAR ICON */
+.box-icon {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid #002042;
+    background-color: rgb(0, 46, 99);
+}
+
+/* LIST ICON */
+.box-icon ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* SETIAP BARIS ICON */
+.box-icon ul li {
+    width: 100%;
+    min-height: 45px;
+    padding: 12px 15px;
+    box-sizing: border-box;
+
+    border: 1px solid #003369;
+    background-color: #1e548a;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* BULLET */
+.box-icon ul li::before {
+    content: "• ";
+}
+
+/* HOVER */
+.box-icon ul li:hover {
+    background-color: #6294c7;
+}
+
+/* ACTIVE */
+.box-icon ul li:active {
+    background-color: #5d83a8;
+}
+.box-icon ul li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.box-icon ul li i {
+    font-size: 20px;
+    color: #ffffff;
+}
+.box-buah ol,
+.box-lorem ul,
+.box-icon ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.list-container {
+    margin-bottom: 25px;
+}
