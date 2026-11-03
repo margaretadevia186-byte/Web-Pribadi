@@ -1,0 +1,799 @@
+/* ================================================= */
+/*                    BASIC                          */
+/* ================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    background-image: url("Bg_1.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* ================================================= */
+/*                  SCROLLER                         */
+/* ================================================= */
+
+.scroller {
+    width: 100%;
+    padding: 8px 0;
+    background: #051c3a;
+    overflow: hidden;
+}
+
+.scroller-box {
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+    overflow: hidden;
+    background: rgba(255, 242, 205, 0.94);
+    border: 3px solid #f4d98d;
+    border-radius: 16px;
+    padding: 7px 0;
+
+    box-shadow:
+        0 0 0 2px #051c3a,
+        0 0 0 5px #f4d98d;
+}
+
+.scroller-track {
+    display: flex;
+    width: max-content;
+    animation: scrollText 30s linear infinite;
+}
+
+.scroller-inner {
+    flex-shrink: 0;
+    white-space: nowrap;
+    color: #051c3a;
+    font-size: 25px;
+    font-weight: bold;
+    padding-right: 60px;
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ================================================= */
+/*                 PAGE TITLE                        */
+/* ================================================= */
+
+.page-title {
+
+    width: 100%;
+
+    text-align: center;
+
+    padding: 40px 20px 35px;
+
+    background: #102b4e;
+
+    border-bottom: 3px solid #f4d98d;
+}
+
+
+.page-title h1 {
+
+    margin: 0;
+
+    font-size: 55px;
+
+    font-weight: 900;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color: white;
+
+    text-shadow:
+        3px 3px 0 #0a1d35,
+        6px 6px 12px rgba(0, 0, 0, 0.45);
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.page-title h1:hover {
+
+    color: #f4d98d;
+
+    transform: scale(1.05);
+
+}
+
+
+.page-title p {
+
+    margin-top: 10px;
+
+    font-size: 16px;
+
+    color: #fff1b8;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ================================================= */
+/*              COLOR HOVER PALETTE                  */
+/* ================================================= */
+
+.color-section {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 28px 20px 10px;
+
+    position: relative;
+
+    z-index: 20;
+
+    overflow: visible;
+}
+
+
+.color-container {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    min-height: 50px;
+
+    overflow: visible;
+}
+
+
+.item-color {
+
+    position: relative;
+
+    flex: 0 0 55px;
+
+    width: 55px;
+
+    height: 32px;
+
+    background-color: var(--color);
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    transform: scale(1);
+
+    transform-origin: center;
+
+    transition:
+        transform 0.25s
+        cubic-bezier(0.175, 0.885, 0.32, 1.2),
+
+        box-shadow 0.25s ease;
+
+    z-index: 1;
+}
+
+
+/* ================= HOVER ================= */
+
+.item-color:hover {
+
+    transform: scale(1.35);
+
+    z-index: 50;
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ================= HEX TEXT ================= */
+
+.item-color span {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: calc(100% + 8px);
+
+    transform:
+        translateX(-50%)
+        translateY(5px);
+
+    padding: 4px 7px;
+
+    border-radius: 4px;
+
+    background: white;
+
+    color: #333;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+}
+
+
+.item-color:hover span {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+
+/* ================================================= */
+/*              INFO CONTAINER                      */
+/* ================================================= */
+
+.info-container {
+
+    width: min(85%, 1200px);
+
+    margin: 50px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 40px;
+}
+
+
+/* ================================================= */
+/*                    INFO BOX                       */
+/* ================================================= */
+
+.info-box {
+
+    position: relative;
+
+    padding: 3px;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    background: #102b4e;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* ================================================= */
+/*              GLOWING BORDER                      */
+/* ================================================= */
+
+.info-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -50%;
+
+    background: conic-gradient(
+        from 0deg,
+
+        transparent 0deg,
+
+        transparent 220deg,
+
+        #f4d98d 260deg,
+
+        #fff3cf 290deg,
+
+        transparent 330deg
+    );
+
+    animation:
+        rotateBorder 4s linear infinite;
+}
+
+
+/* ================================================= */
+/*              BAGIAN DALAM BOX                    */
+/* ================================================= */
+
+.info-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 3px;
+
+    border-radius: 22px;
+
+    background: #102b4e;
+}
+
+
+/* ================================================= */
+/*                 ISI INFORMATION                  */
+/* ================================================= */
+
+.info-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    padding: 35px;
+
+    color: white;
+}
+
+
+/* ================================================= */
+/*                    JUDUL BOX                      */
+/* ================================================= */
+
+.info-content h2 {
+
+    margin-bottom: 20px;
+
+    color: #f4d98d;
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-align: left;
+}
+
+
+/* ================================================= */
+/*                    PARAGRAF                       */
+/* ================================================= */
+
+.info-content p {
+
+    margin-bottom: 15px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    text-align: justify;
+}
+
+
+/* ================================================= */
+/*               ANIMASI BORDER                      */
+/* ================================================= */
+
+@keyframes rotateBorder {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ================================================= */
+/*                     HOVER                         */
+/* ================================================= */
+
+.info-box:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+
+        0 0 15px
+        rgba(244, 217, 141, 0.4),
+
+        0 0 35px
+        rgba(244, 217, 141, 0.2);
+}
+
+
+/* ================================================= */
+/*                    CAROUSEL                       */
+/* ================================================= */
+
+.carousel {
+
+    width: 100%;
+
+    overflow: hidden;
+
+    margin: 60px auto;
+
+    text-align: center;
+
+    padding: 10px 0 30px;
+}
+
+
+.carousel-track {
+
+    display: flex;
+
+    align-items: stretch;
+
+    gap: 25px;
+
+    width: max-content;
+
+    will-change: transform;
+}
+
+
+/* ================================================= */
+/*                    CARD                           */
+/* ================================================= */
+
+.food-card {
+
+    position: relative;
+
+    flex: 0 0 350px;
+
+    width: 350px;
+
+    min-height: 500px;
+
+    padding: 15px;
+
+    background:
+        rgba(179, 206, 255, 0.72);
+
+    border:
+        3px solid rgb(8, 24, 114);
+
+    border-radius: 18px;
+
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.food-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+
+        0 0 15px
+        rgba(244, 217, 141, 0.6),
+
+        0 0 30px
+        rgba(244, 217, 141, 0.3);
+}
+
+
+/* ================================================= */
+/*                    IMAGE                          */
+/* ================================================= */
+
+.food-card img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+
+/* ================================================= */
+/*              NAMA THEME PARK                     */
+/* ================================================= */
+
+.food-card .park-name {
+
+    margin: 15px 0 7px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    color: rgb(26, 31, 107);
+
+    text-align: center;
+}
+
+
+/* ================================================= */
+/*             PENJELASAN PARAGRAF                  */
+/* ================================================= */
+
+.food-card .park-description {
+
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    font-weight: normal;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #2e2975;
+
+    text-align: justify;
+}
+
+
+/* ================================================= */
+/*              CAROUSEL BUTTON                     */
+/* ================================================= */
+
+.carousel-buttons {
+
+    margin-top: 25px;
+}
+
+
+.carousel-buttons button {
+
+    padding: 8px 16px;
+
+    margin: 0 4px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: rgb(8, 24, 114);
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.carousel-buttons button:hover {
+
+    background: #f4d98d;
+
+    color: #051c3a;
+}
+
+
+/* ================================================= */
+/*                  RESPONSIVE                      */
+/* ================================================= */
+
+@media (max-width: 900px) {
+
+    .page-title h1 {
+
+        font-size: 42px;
+    }
+
+
+    .info-container {
+
+        width: 90%;
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .page-title {
+
+        padding:
+            30px 15px;
+    }
+
+
+    .page-title h1 {
+
+        font-size: 32px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .page-title p {
+
+        font-size: 13px;
+    }
+
+
+    .color-container {
+
+        gap: 0px;
+    }
+
+
+    .item-color {
+
+        flex-basis: 35px;
+
+        width: 70px;
+
+        height: 40px;
+    }
+
+
+    .info-container {
+
+        width: 92%;
+
+        margin: 35px auto;
+    }
+
+
+    .info-content {
+
+        padding: 25px;
+    }
+
+
+    .info-content h2 {
+
+        font-size: 23px;
+    }
+
+
+    .food-card {
+
+        flex-basis: 300px;
+
+        width: 300px;
+    }
+
+
+    .food-card img {
+
+        height: 210px;
+    }
+
+}
+
+/* ================================================= */
+/*                   SPARKLES                        */
+/* ================================================= */
+
+.sparkles {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+}
+
+
+.sparkle {
+
+    position: absolute;
+
+    color: #fff1b8;
+
+    text-shadow:
+        0 0 5px rgba(255, 241, 184, 0.8),
+        0 0 10px rgba(255, 241, 184, 0.5);
+
+    animation: twinkle 2s ease-in-out infinite;
+
+}
+
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+
+        opacity: 0.15;
+
+        transform: scale(0.6);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform: scale(1.3);
+
+    }
+
+}
+
+.info-box {
+    margin-top: 0px;
+    margin-bottom: 50px;
+}
+
+.scroller-inner {
+    animation: none;
+}
